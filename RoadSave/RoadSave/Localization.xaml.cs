@@ -20,6 +20,18 @@ namespace RoadSave
 		{
 			InitializeComponent ();
             btnGetLocation.Clicked += BtnGetLocation_Clicked;
+            btnClearSavePins.Clicked += btnClearSavePins_Clicked;
+        }
+
+        private async void btnClearSavePins_Clicked(object sender, EventArgs e)
+        {
+            await ResetLocations();
+        }
+
+        private async Task ResetLocations()
+        {
+            pin.Clear();
+            txtPins.Text = "Pins :";
         }
 
         private async void BtnGetLocation_Clicked(object sender, EventArgs e)
@@ -29,10 +41,7 @@ namespace RoadSave
 
         private async Task RetreiveLocation()
         {
-            if (pin.Count > 5)
-            {
-                pin.Clear();
-            }
+            
             var locator = CrossGeolocator.Current;
 
             locator.DesiredAccuracy = 200;
@@ -46,12 +55,12 @@ namespace RoadSave
             pin.Add(new Pinezki { lat = position.Latitude, lon = position.Longitude });
 
             txtPins.Text = "";
-            
 
+            int i = 0;
             foreach (var item in pin)
             {
-                
-                txtPins.Text += "Lat :" + item.lat + ", Long :" + item.lon + "\n";
+                i++;
+                txtPins.Text += "ID:"+i+ ",Lat:" + item.lat + ",Long:" + item.lon + "\n";
             }
         }
         

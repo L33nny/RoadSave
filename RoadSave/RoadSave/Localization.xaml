@@ -26,9 +26,11 @@
             <Label x:Name="txtLat" Text="Latitude :" VerticalOptions="Center" HorizontalOptions="Center"></Label>
             <Label x:Name="txtLong" Text="Laditude :" VerticalOptions="Center" HorizontalOptions="Center"></Label>
             <Button x:Name="btnGetLocation" Text="Get Curren Location"></Button>
+            <Button x:Name="btnClearSavePins" Text="Usun Zapisane"></Button>
+
         </StackLayout>
 
-        <StackLayout Grid.Row="2" VerticalOptions="StartAndExpand" Padding="10">
+        <StackLayout Grid.Row="2" VerticalOptions="EndAndExpand" Padding="10">
             <Label x:Name="txtPins" Text="Pins :" VerticalOptions="Center" HorizontalOptions="Center"></Label>
         </StackLayout>
 
