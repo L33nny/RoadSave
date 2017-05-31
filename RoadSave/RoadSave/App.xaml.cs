@@ -13,11 +13,12 @@ namespace RoadSave
 		{
 			InitializeComponent();
 
-			MainPage = new RoadSave.MainPage();
+			MainPage = new RoadSave.Localization();
 		}
 
 		protected override void OnStart ()
 		{
+            
 			// Handle when your app starts
 		}
 
